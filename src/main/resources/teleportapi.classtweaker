@@ -1,0 +1,5 @@
+classTweaker v2 official
+
+accessible method net/minecraft/server/level/ServerChunkCache runDistanceManagerUpdates ()Z
+accessible method net/minecraft/server/level/ServerChunkCache getVisibleChunkIfPresent (J)Lnet/minecraft/server/level/ChunkHolder;
+accessible method net/minecraft/server/level/ChunkMap getChunkRangeFuture (Lnet/minecraft/server/level/ChunkHolder;ILjava/util/function/IntFunction;)Ljava/util/concurrent/CompletableFuture;
