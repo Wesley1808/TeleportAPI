@@ -29,10 +29,9 @@ public class TeleportBuilder {
     private Vec3 pos;
     private float yRot = 0;
     private float xRot = 0;
-    private int warmupTicks = 60;
     private boolean sync = false;
+    private int warmupTicks = TeleportManager.getDefaultWarmupTicks();
     private TeleportCancelCheck cancelCheck = TeleportCancelCheck.DEFAULT;
-
     private Set<Relative> relatives = Set.of();
 
     @Nullable
@@ -93,8 +92,8 @@ public class TeleportBuilder {
         return this;
     }
 
-    public TeleportBuilder silent(boolean silent) {
-        this.effects.setSilent(silent);
+    public TeleportBuilder silenceTeleportMessage() {
+        this.effects.silenceTeleportMessage();
         return this;
     }
 

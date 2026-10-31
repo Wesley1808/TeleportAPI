@@ -1,12 +1,17 @@
 package me.wesley1808.teleportapi.api;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import me.wesley1808.teleportapi.internal.config.Config;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.List;
 
 public final class TeleportManager {
     private static final List<TeleportWarmupTask> WARMUPS = new ObjectArrayList<>();
+
+    public static int getDefaultWarmupTicks() {
+        return Config.instance().defaultWarmupTicks;
+    }
 
     public static void scheduleTeleport(TeleportWarmupTask task) {
         WARMUPS.add(task);

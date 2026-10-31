@@ -5,8 +5,8 @@ import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.Nullable;
 
 public final class TeleportEffects {
-    private TeleportEffectHandler handler = TeleportEffectHandler.DEFAULT;
-    private boolean silent;
+    private TeleportEffectHandler handler = DefaultTeleportEffects.getDefault();
+    private boolean silentTeleportMessage;
     @Nullable
     private Component label;
 
@@ -22,8 +22,8 @@ public final class TeleportEffects {
         this.handler.onTeleported(player, this);
     }
 
-    public boolean silent() {
-        return this.silent;
+    public boolean silentTeleportMessage() {
+        return this.silentTeleportMessage;
     }
 
     @Nullable
@@ -35,8 +35,8 @@ public final class TeleportEffects {
         this.handler = handler;
     }
 
-    public void setSilent(boolean silent) {
-        this.silent = silent;
+    public void silenceTeleportMessage() {
+        this.silentTeleportMessage = true;
     }
 
     public void setLabel(@Nullable Component label) {

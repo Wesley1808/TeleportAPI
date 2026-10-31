@@ -10,10 +10,13 @@ import org.jspecify.annotations.Nullable;
 import java.util.function.Function;
 
 public class Formatter {
-    public static final NodeParser BASE_PARSER = baseParser().build();
 
     public static Component parse(String text, NodeParser parser, ParserContext context) {
         return parser.parseComponent(text, context);
+    }
+
+    public static NodeParser singlePlaceholderParser(String key, Component placeholder) {
+        return placeholderParser((k) -> k.equals(key) ? placeholder : null);
     }
 
     public static NodeParser placeholderParser(Function<String, @Nullable Component> placeholderMapper) {
