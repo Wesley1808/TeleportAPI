@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "teleport-api",
+  "id": "teleportapi",
   "version": "${version}",
   "name": "Teleport API",
   "description": "Lightweight library for player teleportation",
