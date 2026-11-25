@@ -6,6 +6,7 @@ import com.mojang.brigadier.context.CommandContext;
 import me.wesley1808.teleportapi.internal.TeleportAPI;
 import me.wesley1808.teleportapi.internal.config.ConfigManager;
 import net.minecraft.ChatFormatting;
+import net.minecraft.commands.CommandPermissionLevels;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
@@ -15,7 +16,7 @@ import static net.minecraft.commands.Commands.literal;
 public class TeleportAPICommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
-        dispatcher.register(literal("teleportapi").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
+        dispatcher.register(literal("teleportapi").requires(Commands.hasPermission(CommandPermissionLevels.LEVEL_GAMEMASTERS))
                 .then(literal("reload").executes(TeleportAPICommand::reload))
                 .then(literal("save").executes(TeleportAPICommand::save))
         );
